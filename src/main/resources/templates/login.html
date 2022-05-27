@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Test Me</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous" />
+        <link rel="stylesheet" th:href="@{/css/style.css}">
+        <script src="https://kit.fontawesome.com/ca3aa356f8.js" crossorigin="anonymous"></script>
+    </head>
+<body>
+        <div class="input-field mt-3">
+            <h1>Login</h1>
+            <input type="text" placeholder="USER" class="input field-user"/>
+            <input type="text" placeholder="PASSWORD" class="input field-password"/>
+            <div>
+                <button class="btn btn-primary mt-3" style="border-radius:20px;">Login <i class="fa-solid fa-right-to-bracket"></i></button>
+            </div>
+            <hr>
+            <div class="mb-3 text-secondary">Login with</div>
+            <div class="text-dcn">
+                <a th:href="@{/oauth2/authorization/google}" class="social-login color-gmail"><span class="text-white"><i class="fa-brands fa-google-plus-g"></i> Google</span></a>
+                <a th:href="@{/oauth2/authorization/facebook}" class="social-login color-face"><span class="text-white"><i class="fa-brands fa-facebook-f"></i> Facebook</span></a>
+                <a th:href="@{/oauth2/authorization/line}" class="social-login color-line"><span class="text-white"><i class="fa-brands fa-line"></i> Line</span></a>
+                <a th:href="@{/oauth2/authorization/github}" class="social-login color-github"><span class="text-white"><i class="fa-brands fa-github"></i> Github</span></a>
+            </div>
+            
+        </div>
+        <!-- <script>
+            let userRedirect = localStorage.getItem("loginuser");
+            if(userRedirect != ""){
+                window.location.href = "/";
+            }
+        </script> -->
+</body>
+</html>

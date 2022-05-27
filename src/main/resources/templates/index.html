@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Test Me</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous" />
+        <link rel="stylesheet" th:href="@{/css/style.css}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <script src="https://kit.fontawesome.com/ca3aa356f8.js" crossorigin="anonymous"></script>
+        <script th:src="@{|https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js|}"></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+        
+        <script th:src="@{/js/js.js}"></script>
+        <link href="https://vjs.zencdn.net/7.19.2/video-js.css" rel="stylesheet" />
+    </head>
+<body>
+   
+    <div class="contain-user">
+        <div class="user-nav">
+            <div id="test">
+                <span class="text-spring"><i class="fa-solid fa-leaf"></i> SPRING BOOT</span> 
+            </div>
+            <div class="dflex-img-name">
+                <div><img class="imglogin" th:src="@{|${picture}|}" /></div>
+                <!-- <img src="${#picture}" alt="imageUser"/> -->
+                <div th:text="${userName}" style="margin-right: 5px;"></div>
+                <div class="logout-button">
+                    <form class="m-0 p-0" th:action="@{/logout}" method="post">
+                        <!-- <label for="example">Let's submit some text</label>
+                        <input hidden id="example" type="submit" name="text"> -->
+                        <button type="submit" style="background: transparent;border:0;cursor:pointer;"> <i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+                    </form> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contain-slide">
+        <div class="item-slide bg-light py-5 background"style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;border-radius:20px;height: 500px;">
+            <button class="btn-slide" id="back"><i class="fa-solid fa-angles-left text-white h1 zoom" style="cursor: pointer;"></i></button>
+            <div class="d-none-img" id="img1">
+                <!-- <img class="img-shadow" th:src="@{/img/pic1.jpeg}"/> -->
+                <!-- <iframe src="http://www.youtube.com/embed/W7qWa52k-nE"width="600" height="400" frameborder="0" allowfullscreen></iframe> -->
+               <div>
+                <video
+                    id="video_player"
+                    class="video-js video-test"
+                    controls
+                    preload="auto"
+                    width="600"
+                    height="400"
+                    th:src="@{vdo/sample-mp4-file.mp4}" type="video/mp4"
+                >
+               </div>
+
+            </div>
+            <div class="d-none-img" id="img2">
+                <img class="img-shadow" th:src="@{/img/pic2.jpeg}"/>
+            </div>
+            <div class="d-none-img" id="img3">
+                <img class="img-shadow" th:src="@{/img/pic3.jpeg}"/>
+            </div>
+            <div class="d-none-img" id="img4">
+                <img class="img-shadow" th:src="@{/img/pic4.jpeg}"/>
+            </div>
+            <button class="btn-slide" id="next"><i class="fa-solid fa-angles-right text-white h1 zoom" style="cursor: pointer;"></i></button>
+        </div>
+    </div>
+  <div class="contain-slick">
+      <div class="item-slick">test1</div>
+      <div class="item-slick">test2</div>
+      <div class="item-slick">test3</div>
+      <div class="item-slick">test4</div>
+      <div class="item-slick">test5</div>
+      <div class="item-slick">test6</div>
+  </div>
+
+    <!-- <p th:text="'Hello : ' + ${name}"></p>
+    <div class="container-navbar">
+        <a th:href="@{/login}" class="container-navbar-btn" th:text="Login"></a>
+    </div> -->
+    <!-- <input type="hidden" id="user" th:value="${userName}"/>
+    <div>
+        <div th:text="${userName}"></div>
+    </div>
+    <div>
+        <div th:text="${clientName}"></div>
+    </div>
+    <div>
+        <ul>
+            <li th:each="userAttribute : ${userAttributes}">
+                <span style="font-weight:bold" th:text="${userAttribute.key}"></span>: <span th:text="${userAttribute.value}"></span>
+            </li>
+        </ul>
+    </div> -->
+    <!-- <p>Saved name is:</p>
+    <p id="demo"></p> -->
+    
+    <!-- <script>
+    // Set Item
+    let getusername = document.getElementById("user").value;
+    localStorage.setItem("loginuser", getusername);
+    // Retrieve
+    </script> -->
+</body>
+</html>

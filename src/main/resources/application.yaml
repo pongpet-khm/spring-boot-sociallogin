@@ -1,0 +1,44 @@
+spring:
+    thymeleaf:
+        cache: false
+    security:
+        oauth2:
+            client:
+                registration:
+                    google:
+                        clientId: 389277866740-o1upl1l74iq267mrrduh08f7kvt353gd.apps.googleusercontent.com
+                        clientSecret: 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
+                        redirectUri: '{baseUrl}/login/oauth2/code/{registrationId}'
+                        scope:
+                            - email
+                            - profile
+                    github:
+                        clientId: 3374809a4c589c09838d
+                        clientSecret: 3549a62cf0477ae51beda3895007e2a4763520a9
+                        redirectUri: '{baseUrl}/login/oauth2/code/{registrationId}'
+                        scope:
+                            - user:email
+                            - read:user
+                    facebook:
+                        clientId: 316998853937558
+                        clientSecret: 621356d65fa7114a73f77c894ed47a12
+                        redirectUri: '{baseUrl}/login/oauth2/code/{registrationId}'
+                        scope:
+                            - email
+                            - public_profile
+                    line:
+                        clientId: 1657161308
+                        clientSecret: 66c7a7a2aa88d63c19a9bed9abeccc5a
+                        provider: LINE
+                        scope:
+                            - profile
+                        redirectUri: '{baseUrl}/login/oauth2/code/{registrationId}'
+                        clientAuthenticationMethod: basic
+                        authorizationGrantType: authorization_code
+                provider:
+                    LINE:
+                        authorizationUri: https://access.line.me/oauth2/v2.1/authorize
+                        tokenUri: https://api.line.me/oauth2/v2.1/token
+                        userInfoUri: https://api.line.me/v2/profile
+                        userNameAttribute: userId
+
