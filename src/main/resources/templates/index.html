@@ -2,9 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Test Me</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous" />
         <link rel="stylesheet" th:href="@{/css/style.css}">
+        <link rel="stylesheet" th:href="@{/css/classstyle.css}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
         <script src="https://kit.fontawesome.com/ca3aa356f8.js" crossorigin="anonymous"></script>
         <script th:src="@{|https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js|}"></script>
@@ -13,13 +15,17 @@
         <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
         <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
-        
         <script th:src="@{/js/js.js}"></script>
         <link href="https://vjs.zencdn.net/7.19.2/video-js.css" rel="stylesheet" />
     </head>
 <body>
+        
+    <button class="btn" id="btn-test">
+        Click hear
+    </button>
+    <div id="info"></div>
    
-    <div class="contain-user">
+    <div class="contain-user item-slide">
         <div class="user-nav">
             <div id="test">
                 <span class="text-spring"><i class="fa-solid fa-leaf"></i> SPRING BOOT</span> 
@@ -69,14 +75,35 @@
             <button class="btn-slide" id="next"><i class="fa-solid fa-angles-right text-white h1 zoom" style="cursor: pointer;"></i></button>
         </div>
     </div>
-  <div class="contain-slick">
-      <div class="item-slick">test1</div>
-      <div class="item-slick">test2</div>
-      <div class="item-slick">test3</div>
-      <div class="item-slick">test4</div>
-      <div class="item-slick">test5</div>
-      <div class="item-slick">test6</div>
-  </div>
+
+
+    <div class="box-full my-5">
+        <button id="prev" class="btn-next-prev left"><i class="fa-solid fa-angle-left"></i></button>
+        <button id="nexts" class="btn-next-prev next"><i class="fa-solid fa-angle-right"></i></button>
+
+        <div class="box-contain">
+            <div id="sl1" class="slick-item" data-time-out="5000">
+                <img class="img-shadow" th:src="@{/img/pic1.jpeg}"/>
+            </div>
+            <div class="slick-item" data-time-out="3000">
+                <img class="img-shadow" th:src="@{/img/pic2.jpeg}"/>
+            </div>
+            <div class="slick-item" data-time-out="10000">
+                <img class="img-shadow" th:src="@{/img/pic3.jpeg}"/>
+            </div>
+            <div class="slick-item" data-time-out="8000">
+                <img class="img-shadow" th:src="@{/img/pic4.jpeg}"/>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    
+
+
+
+    
 
     <!-- <p th:text="'Hello : ' + ${name}"></p>
     <div class="container-navbar">
